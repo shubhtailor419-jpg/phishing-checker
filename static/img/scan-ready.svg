@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 320" role="img" aria-label="Glowing globe and shield over code: ready to scan">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="48%" r="75%">
+      <stop offset="0" stop-color="#0f2748"/>
+      <stop offset="0.6" stop-color="#0a1328"/>
+      <stop offset="1" stop-color="#060a16"/>
+    </radialGradient>
+    <radialGradient id="fade" cx="50%" cy="50%" r="60%">
+      <stop offset="0.3" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+    </radialGradient>
+    <mask id="edge"><rect width="580" height="320" fill="url(#fade)"/></mask>
+    <clipPath id="globe"><circle cx="290" cy="150" r="108"/></clipPath>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+
+  <rect width="580" height="320" fill="url(#bg)"/>
+
+  <g mask="url(#edge)" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#3d9bff" opacity="0.5">
+    <text x="14" y="26">#!/usr/bin/python</text>
+    <text x="14" y="46">url = input("Paste a link")</text>
+    <text x="14" y="66">host = urlparse(url).hostname</text>
+    <text x="14" y="86">for rule in RULES:</text>
+    <text x="14" y="106">    score += rule.check(host)</text>
+    <text x="14" y="126">def registered_domain(host):</text>
+    <text x="14" y="146">    return ".".join(parts[-2:])</text>
+    <text x="14" y="166">if reg not in OFFICIAL:</text>
+    <text x="14" y="186">    warn("not the real site")</text>
+    <text x="14" y="206">level = band(score)</text>
+    <text x="14" y="226">print(verdict, findings)</text>
+    <text x="14" y="246"># nothing is stored</text>
+    <text x="14" y="266"># the link is never opened</text>
+    <text x="14" y="286">return Result(score)</text>
+    <text x="14" y="306">main()</text>
+    <text x="352" y="26">class Finding:</text>
+    <text x="352" y="46">    points: int</text>
+    <text x="352" y="66">    title: str</text>
+    <text x="352" y="86">    detail: str = ""</text>
+    <text x="352" y="106">URGENCY = word_pattern([</text>
+    <text x="352" y="126">  "act now", "verify now",</text>
+    <text x="352" y="146">])</text>
+    <text x="352" y="166">if "@" in url: add(20)</text>
+    <text x="352" y="186">if is_ip(host): add(30)</text>
+    <text x="352" y="206">if tld in BAD_TLDS: add(15)</text>
+    <text x="352" y="226">score = min(100, total)</text>
+    <text x="352" y="246">LOW_MAX = 20</text>
+    <text x="352" y="266">MEDIUM_MAX = 50</text>
+    <text x="352" y="286">app.run(port=5000)</text>
+  </g>
+
+  <ellipse cx="290" cy="150" rx="150" ry="125" fill="#1e6bff" opacity="0.22" filter="url(#soft)"/>
+
+  <g clip-path="url(#globe)" fill="none" stroke="#5db4ff" stroke-width="1" opacity="0.7">
+    <circle cx="290" cy="150" r="108" fill="#0b1b36" fill-opacity="0.65"/>
+    <ellipse cx="290" cy="150" rx="108" ry="108"/>
+    <ellipse cx="290" cy="150" rx="82" ry="108"/>
+    <ellipse cx="290" cy="150" rx="52" ry="108"/>
+    <ellipse cx="290" cy="150" rx="20" ry="108"/>
+    <ellipse cx="290" cy="150" rx="108" ry="22"/>
+    <ellipse cx="290" cy="150" rx="108" ry="54" opacity="0.8"/>
+    <ellipse cx="290" cy="104" rx="95" ry="16" opacity="0.8"/>
+    <ellipse cx="290" cy="196" rx="95" ry="16" opacity="0.8"/>
+    <path d="M182 150h216" stroke-opacity="0.8"/>
+    <path d="M290 42v216" stroke-opacity="0.8"/>
+  </g>
+  <circle cx="290" cy="150" r="108" fill="none" stroke="#7cc4ff" stroke-width="1.6" filter="url(#glow)"/>
+  <circle cx="290" cy="150" r="124" fill="none" stroke="#3d9bff" stroke-width="1" stroke-dasharray="2 8" opacity="0.7"/>
+
+  <g fill="#9bd4ff" filter="url(#glow)">
+    <circle cx="224" cy="112" r="3.4"/>
+    <circle cx="352" cy="96" r="3.4"/>
+    <circle cx="376" cy="164" r="3.4"/>
+    <circle cx="246" cy="214" r="3.4"/>
+    <circle cx="332" cy="224" r="3.4"/>
+    <circle cx="206" cy="170" r="3.4"/>
+  </g>
+  <g stroke="#7cc4ff" stroke-width="1" opacity="0.55" fill="none">
+    <path d="M224 112L290 150L352 96M290 150L376 164M290 150L246 214M290 150L332 224M290 150L206 170"/>
+  </g>
+
+  <g filter="url(#glow)" fill="#0a1a33" stroke="#bfe3ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M290 112l-34 14v28c0 24 15 42 34 50 19-8 34-26 34-50v-28z"/>
+    <path fill="none" d="m274 156 12 12 22-24"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, Segoe UI, Roboto, sans-serif" font-weight="700" text-anchor="middle">
+    <rect x="198" y="276" width="184" height="30" rx="15" fill="#1e6bff" opacity="0.18" stroke="#5db4ff" stroke-width="1.2"/>
+    <text x="290" y="296" font-size="13" letter-spacing="2.4" fill="#9bd4ff">READY TO SCAN</text>
+  </g>
+</svg>

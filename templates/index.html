@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Phishing Checker — is that link or message safe?{% endblock %}
+
+{% block content %}
+<section class="hero hero-grid">
+  <div>
+    <p class="eyebrow">Free &middot; No sign-up &middot; Never opens your link</p>
+    <h1>Is that link, email or SMS <em>safe</em> to trust?</h1>
+    <p class="lede">Paste it below. The checker looks for the tricks phishing messages rely on and shows exactly why it reached its verdict.</p>
+  </div>
+  <img class="hero-art" src="{{ url_for('static', filename='img/scan-ready.svg') }}" width="580" height="320" alt="">
+</section>
+
+<section class="card" aria-labelledby="check-title">
+  <h2 id="check-title" class="sr-only">Check something</h2>
+
+  <div class="tabs" role="tablist" aria-label="What do you want to check?">
+    <button type="button" role="tab" id="tab-url" aria-selected="true" aria-controls="panel" data-mode="url">Link (URL)</button>
+    <button type="button" role="tab" id="tab-email" aria-selected="false" aria-controls="panel" data-mode="email" tabindex="-1">Email / SMS text</button>
+  </div>
+
+  <form id="check-form" novalidate>
+    <div id="panel" role="tabpanel" aria-labelledby="tab-url">
+      <label for="content" id="content-label" class="sr-only">Paste a link to check</label>
+      <textarea id="content" name="content" rows="2" spellcheck="false" autocomplete="off"
+                maxlength="{{ max_url }}" data-max-url="{{ max_url }}" data-max-email="{{ max_email }}"
+                placeholder="https://example.com/login"></textarea>
+    </div>
+    <div class="form-row">
+      <button type="submit" class="btn" id="submit">Check it</button>
+      <p class="note">Analysed from the text alone. We never visit the link.</p>
+    </div>
+    <p id="error" class="error" role="alert" hidden></p>
+  </form>
+
+  <p class="examples">Try an example:
+    <button type="button" class="linklike" data-mode="url" data-text="https://www.google.com">a normal link</button>
+    <button type="button" class="linklike" data-mode="url" data-text="http://paypa1-secure-login.xyz/verify">a fake bank link</button>
+    <button type="button" class="linklike" data-mode="email" data-text="Dear customer, URGENT: your account will be suspended within 24 hours. Confirm your OTP and password now at http://sbi-kyc-update.top/login to avoid legal action.">a scam SMS</button>
+  </p>
+</section>
+
+<section id="result" class="result" tabindex="-1" aria-live="polite" hidden
+         data-art-low="{{ url_for('static', filename='img/scan-ready.svg') }}"
+         data-art-medium="{{ url_for('static', filename='img/scan-suspicious.svg') }}"
+         data-art-high="{{ url_for('static', filename='img/scan-danger.svg') }}"></section>
+
+<section class="card history" id="history-card" hidden aria-labelledby="history-title">
+  <div class="history-head">
+    <h2 id="history-title">Recent checks <small>saved only in this browser</small></h2>
+    <button type="button" id="clear-history" class="linklike">Clear</button>
+  </div>
+  <ul id="history" class="history-list"></ul>
+</section>
+
+<section class="features" aria-label="What makes it different">
+  <div>
+    <h3>It shows its work</h3>
+    <p>Every point in the score comes with a plain-English reason, so you learn what to look for yourself.</p>
+  </div>
+  <div>
+    <h3>It stays private</h3>
+    <p>Nothing you paste is stored on a server, and the link is never opened or contacted.</p>
+  </div>
+  <div>
+    <h3>The rules are open</h3>
+    <p>See every check and its weight on the <a href="{{ url_for('learn') }}">Learn page</a>.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+{% endblock %}

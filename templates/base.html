@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Phishing Checker{% endblock %}</title>
+  <meta name="author" content="Shubh Tailor">
+  <meta name="description" content="Paste a link, email or SMS and see why it may be phishing. Free, private, and it never opens the link.">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ url_for('index') }}">
+        <svg class="brand-mark" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2.5 4.5 5.5v5.8c0 4.6 3.2 8.7 7.5 10.2 4.3-1.5 7.5-5.6 7.5-10.2V5.5L12 2.5z"/>
+          <path d="m8.6 12.2 2.4 2.4 4.4-4.6"/>
+        </svg>
+        <span>Phishing<strong>Checker</strong></span>
+      </a>
+      <nav aria-label="Main">
+        <a href="{{ url_for('index') }}"{% if request.endpoint == 'index' %} aria-current="page"{% endif %}>Checker</a>
+        <a href="{{ url_for('learn') }}"{% if request.endpoint == 'learn' %} aria-current="page"{% endif %}>Learn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>This tool uses simple rules to spot common tricks. It cannot prove that something is safe, so when in doubt, open the official app or website yourself.</p>
+      <p>Targeted by a scam in India? Report it at <a href="https://cybercrime.gov.in" rel="noopener noreferrer" target="_blank">cybercrime.gov.in</a> or call <strong>1930</strong>.</p>
+      <p class="small">Built by <strong>Shubh Tailor</strong> for the IBM SkillsBuild &times; BharatCares Cybersecurity Bootcamp, October 2026.</p>
+    </div>
+  </footer>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

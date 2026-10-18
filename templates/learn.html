@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Learn — how to spot phishing · Phishing Checker{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Learn</p>
+  <h1>How to spot phishing yourself</h1>
+  <p class="lede">The checker is only a helper. These habits protect you everywhere, including places no tool can reach.</p>
+</section>
+
+<section class="card prose">
+  <h2>Six habits that stop most attacks</h2>
+  <ol class="tips">
+    <li><strong>Read the real domain.</strong> It is the last two words before the first single slash. In <code>login.paypal.com.example.top</code> the owner is <code>example.top</code>.</li>
+    <li><strong>Distrust urgency.</strong> "Act now", "account suspended" and "last warning" are designed to stop you thinking.</li>
+    <li><strong>Never share OTPs, PINs or passwords.</strong> A real bank or company will not ask for them by message or call.</li>
+    <li><strong>Go to the source yourself.</strong> Open the official app or type the website address instead of tapping the link.</li>
+    <li><strong>Check the sender, not just the name.</strong> A display name is easy to fake; the address behind it is harder.</li>
+    <li><strong>Be careful with app downloads.</strong> Install apps only from official stores, never from a link in a message.</li>
+  </ol>
+</section>
+
+<section class="card prose">
+  <h2>How the score works</h2>
+  <p>Each check that fires adds points. The total is capped at 100.</p>
+  <ul class="bands">
+    <li><span class="dot low"></span><strong>0&ndash;{{ low_max }}</strong> Low risk</li>
+    <li><span class="dot medium"></span><strong>{{ low_max + 1 }}&ndash;{{ medium_max }}</strong> Suspicious</li>
+    <li><span class="dot high"></span><strong>{{ medium_max + 1 }}&ndash;100</strong> Likely phishing</li>
+  </ul>
+
+  <h3>Link checks</h3>
+  <div class="table-scroll">
+    <table class="rules">
+      <thead><tr><th scope="col">Check</th><th scope="col">Points</th><th scope="col">Why it matters</th></tr></thead>
+      <tbody>
+      {% for r in url_rules %}
+        <tr><th scope="row">{{ r.title }}</th><td class="num">{% if r.points is number %}+{% endif %}{{ r.points }}</td><td>{{ r.why }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Message checks</h3>
+  <div class="table-scroll">
+    <table class="rules">
+      <thead><tr><th scope="col">Check</th><th scope="col">Points</th><th scope="col">Why it matters</th></tr></thead>
+      <tbody>
+      {% for r in email_rules %}
+        <tr><th scope="row">{{ r.title }}</th><td class="num">{% if r.points is number %}+{% endif %}{{ r.points }}</td><td>{{ r.why }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card prose">
+  <h2>What this tool cannot do</h2>
+  <ul>
+    <li>It does not open the link, so it cannot see what the page actually looks like.</li>
+    <li>It does not know about brand-new attacks. A clean score does not mean safe.</li>
+    <li>A rule can misfire. A genuine site with a long address or login-style words may gain a few points.</li>
+  </ul>
+  <p>If you have already entered details on a suspicious page: change that password, contact your bank if money or cards are involved, and report it at <a href="https://cybercrime.gov.in" rel="noopener noreferrer" target="_blank">cybercrime.gov.in</a> or on <strong>1930</strong> in India.</p>
+</section>
+{% endblock %}

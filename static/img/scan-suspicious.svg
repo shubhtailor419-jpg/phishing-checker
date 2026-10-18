@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 320" role="img" aria-label="Magnifying glass over code: look closer">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="48%" r="75%">
+      <stop offset="0" stop-color="#2a2010"/>
+      <stop offset="0.55" stop-color="#101830"/>
+      <stop offset="1" stop-color="#070b18"/>
+    </radialGradient>
+    <radialGradient id="fade" cx="50%" cy="50%" r="60%">
+      <stop offset="0.3" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+    </radialGradient>
+    <mask id="edge"><rect width="580" height="320" fill="url(#fade)"/></mask>
+    <clipPath id="lens"><circle cx="262" cy="140" r="84"/></clipPath>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+
+  <rect width="580" height="320" fill="url(#bg)"/>
+
+  <g mask="url(#edge)" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#4aa8ff" opacity="0.5">
+    <text x="14" y="26">https://secure-login.example</text>
+    <text x="14" y="46">href="http://bit.ly/3xYz"</text>
+    <text x="14" y="66">if (host.endsWith(".top")) {</text>
+    <text x="14" y="86">  flag("risky ending");</text>
+    <text x="14" y="106">}</text>
+    <text x="14" y="126">brand = "paypal";</text>
+    <text x="14" y="146">real = registered_domain(host);</text>
+    <text x="14" y="166">if (real != official) warn();</text>
+    <text x="14" y="186">tokens = host.split("-");</text>
+    <text x="14" y="206">hyphens = tokens.length - 1;</text>
+    <text x="14" y="226">if (hyphens &gt;= 3) add(10);</text>
+    <text x="14" y="246">port = url.port || 443;</text>
+    <text x="14" y="266">if (port != 443) add(10);</text>
+    <text x="14" y="286">score = min(100, total);</text>
+    <text x="352" y="26">status: "check carefully"</text>
+    <text x="352" y="46">length: 94 characters</text>
+    <text x="352" y="66">subdomains: 4</text>
+    <text x="352" y="86">tld: ".xyz"</text>
+    <text x="352" y="106">https: false</text>
+    <text x="352" y="126">words: login, verify</text>
+    <text x="352" y="146">shortener: true</text>
+    <text x="352" y="166">level = "medium";</text>
+    <text x="352" y="186">advice = "open the app";</text>
+    <text x="352" y="206">// do not enter OTP</text>
+    <text x="352" y="226">// do not enter password</text>
+    <text x="352" y="246">verify(sender);</text>
+    <text x="352" y="266">report("cybercrime.gov.in");</text>
+    <text x="352" y="286">return findings;</text>
+  </g>
+
+  <ellipse cx="262" cy="140" rx="130" ry="115" fill="#ffb02e" opacity="0.2" filter="url(#soft)"/>
+
+  <circle cx="262" cy="140" r="84" fill="#0b1630" fill-opacity="0.9"/>
+  <g clip-path="url(#lens)" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#8cc8ff">
+    <text x="204" y="88">href="http://</text>
+    <text x="204" y="108" fill="#ffc24d" font-weight="700">paypa1-secure</text>
+    <text x="204" y="128" fill="#ffc24d" font-weight="700">-login.xyz</text>
+    <text x="204" y="148">/verify?id=</text>
+    <text x="204" y="168">  4821&amp;url=</text>
+    <text x="204" y="188">  http://x.top"</text>
+  </g>
+  <circle cx="262" cy="140" r="84" fill="none" stroke="#ffc24d" stroke-width="7" filter="url(#glow)"/>
+  <circle cx="262" cy="140" r="84" fill="none" stroke="#fff4d6" stroke-width="1.5" opacity="0.6"/>
+  <path d="M232 92c10-10 24-16 38-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+  <path d="M322 200l62 62" stroke="#ffc24d" stroke-width="14" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M322 200l62 62" stroke="#7a5a1c" stroke-width="5" stroke-linecap="round"/>
+
+  <g font-family="ui-sans-serif, system-ui, Segoe UI, Roboto, sans-serif" font-weight="700" text-anchor="middle">
+    <rect x="198" y="276" width="184" height="30" rx="15" fill="#ffb02e" opacity="0.16" stroke="#ffc24d" stroke-width="1.2"/>
+    <text x="290" y="296" font-size="13" letter-spacing="2.4" fill="#ffd27a">LOOK CLOSER</text>
+  </g>
+</svg>

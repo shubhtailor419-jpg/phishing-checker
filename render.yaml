@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: phishing-checker
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: TRUST_PROXY
+        value: "1"

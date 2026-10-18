@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 320" role="img" aria-label="Glowing red skull over code: danger detected">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="48%" r="75%">
+      <stop offset="0" stop-color="#2a0f1c"/>
+      <stop offset="0.55" stop-color="#101830"/>
+      <stop offset="1" stop-color="#070b18"/>
+    </radialGradient>
+    <radialGradient id="fade" cx="50%" cy="50%" r="60%">
+      <stop offset="0.25" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+    </radialGradient>
+    <mask id="edge"><rect width="580" height="320" fill="url(#fade)"/></mask>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+
+  <rect width="580" height="320" fill="url(#bg)"/>
+
+  <g mask="url(#edge)" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#4aa8ff" opacity="0.55">
+    <text x="14" y="26">if (page.asks(password, otp)) {</text>
+    <text x="14" y="46">  send(credentials, "http://evil.top");</text>
+    <text x="14" y="66">  redirect(shortlink);  // hides the target</text>
+    <text x="14" y="86">} else if (domain != brand.official) {</text>
+    <text x="14" y="106">  warn("look-alike domain");</text>
+    <text x="14" y="126">}  const urgency = "act now";</text>
+    <text x="14" y="146">verify(url.host, tld, subdomains);</text>
+    <text x="14" y="166">score += 30; // brand on wrong domain</text>
+    <text x="14" y="186">if (score &gt; 50) block(link);</text>
+    <text x="14" y="206">http://paypa1-secure-login.xyz</text>
+    <text x="14" y="226">fetch(url, { credentials: "steal" })</text>
+    <text x="14" y="246">localStorage.token = attacker.key;</text>
+    <text x="14" y="266">while (victim.trusts(message)) {</text>
+    <text x="14" y="286">  harvest(victim.data);</text>
+    <text x="14" y="306">}</text>
+    <text x="352" y="26">name=&lt;img&gt; onerror=steal()</text>
+    <text x="352" y="46">status: "account suspended"</text>
+    <text x="352" y="66">kyc.update(sbi-kyc-update.top)</text>
+    <text x="352" y="86">otp = prompt("Enter OTP now");</text>
+    <text x="352" y="106">send(otp, attacker.server);</text>
+    <text x="352" y="126">href="http://192.168.1.1/login@"</text>
+    <text x="352" y="146">// punycode: xn--pple-43d.com</text>
+    <text x="352" y="166">download("update.apk");</text>
+    <text x="352" y="186">legal_action = "within 24 hours";</text>
+    <text x="352" y="206">hostname.split(".").slice(-2);</text>
+    <text x="352" y="226">if (!https) risk += 10;</text>
+    <text x="352" y="246">risk = Math.min(100, risk);</text>
+    <text x="352" y="266">verdict = "LIKELY PHISHING";</text>
+    <text x="352" y="286">return { score, findings };</text>
+  </g>
+
+  <ellipse cx="290" cy="150" rx="150" ry="120" fill="#ff2d3d" opacity="0.28" filter="url(#soft)"/>
+
+  <circle cx="290" cy="150" r="128" fill="none" stroke="#ff4d5a" stroke-width="1.2" stroke-dasharray="3 7" opacity="0.7"/>
+  <path d="M290 14v26M290 260v26M152 150h26M402 150h26" stroke="#ff4d5a" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+
+  <g filter="url(#glow)" stroke="#ff5a66" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round">
+    <path fill="#2b0c14" d="M290 58C232 58 198 100 198 146c0 30 15 48 36 60v30c0 12 9 20 21 20h70c12 0 21-8 21-20v-30c21-12 36-30 36-60 0-46-34-88-92-88z"/>
+    <ellipse cx="256" cy="144" rx="23" ry="27" fill="#070b18"/>
+    <ellipse cx="324" cy="144" rx="23" ry="27" fill="#070b18"/>
+    <path fill="#070b18" d="M290 172l-13 24h26z"/>
+    <path fill="none" d="M250 226v-14h80v14M270 212v34M290 212v34M310 212v34"/>
+    <path fill="none" stroke-width="2" opacity="0.7" d="M228 100c8-18 24-30 44-35M352 100c-8-18-24-30-44-35"/>
+  </g>
+  <circle cx="256" cy="144" r="6" fill="#ff7a84" opacity="0.9"/>
+  <circle cx="324" cy="144" r="6" fill="#ff7a84" opacity="0.9"/>
+
+  <g font-family="ui-sans-serif, system-ui, Segoe UI, Roboto, sans-serif" font-weight="700" text-anchor="middle">
+    <rect x="196" y="274" width="188" height="30" rx="15" fill="#ff2d3d" opacity="0.18" stroke="#ff4d5a" stroke-width="1.2"/>
+    <text x="290" y="294" font-size="13" letter-spacing="2.4" fill="#ff8a93">THREAT DETECTED</text>
+  </g>
+</svg>
